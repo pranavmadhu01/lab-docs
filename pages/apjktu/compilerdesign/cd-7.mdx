@@ -1,0 +1,63 @@
+# YACC specification to recognize valid identifier
+
+## Aim
+
+Generate a YACC specification to recognize a valid identifier which starts with a letter followed by any number of letters or digits.
+
+## Program
+
+#### yacc
+
+```yacc showLineNumbers copy
+%{
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int flag=0;
+%}
+
+%token LETTER
+%token DIGIT
+
+%%
+E:LETTER S
+S:LETTER S
+|DIGIT S
+|
+;
+%%
+
+void main()
+{
+	printf("Enter the identifier.\n");
+	yyparse();
+	if(flag==0)
+	{
+		printf("Valid Identifier.\n");
+	}
+}
+
+void yyerror()
+{
+	flag=1;
+	printf("Invalid identifier.\n");
+}
+```
+
+#### lex
+
+```yacc showLineNumbers copy
+%{
+#include"y.tab.h"
+%}
+
+%%
+[a-zA-Z_] {return LETTER;}
+[0-9] {return DIGIT;}
+%%
+
+int yywrap()
+{
+return 1;
+}
+```

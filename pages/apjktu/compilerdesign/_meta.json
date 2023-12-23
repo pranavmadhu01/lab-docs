@@ -1,0 +1,16 @@
+{
+    "cd-1":"Lex Tool in C",
+    "cd-3":"String Analysis",
+    "cd-4":"Letter Case",
+    "cd-5":"Vowels and Consonants",
+    "cd-6":"Valid Expression",
+    "cd-7":"Valid Identifier",
+    "cd-8":"Calculator",
+    "cd-10":"ε-Closure of NFA",
+    "cd-11":"ε-NFA to NFA",
+    "cd-14":"First and Follow",
+    "cd-15":"Recursive Decent Parser",
+    "cd-16":"Shift Reduce Parser",
+    "cd-17":"Constant Propagation",
+    "cd-18":"Loop Unrolling"
+}

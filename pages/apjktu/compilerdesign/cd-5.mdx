@@ -1,0 +1,37 @@
+# Number of vowels and consonants using LEX Tool
+
+## Aim
+
+Write a lex program to find out total number of vowels and consonants from the given input string.
+
+## Program
+
+```lex showLineNumbers copy
+%{
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int lc=0,vc=0,cc=0;
+%}
+
+%%
+[ \t] ;
+[0-9] ;
+[aeiouAEIOU] {lc++;vc++;}
+[a-zA-Z] {lc++;cc++;}
+%%
+
+int yywrap()
+{
+	return 1;
+}
+
+void main ()
+{
+	printf("Enter the string for analysis.\n");
+	yylex();
+	printf("The vowel count is %d\n",vc);
+	printf("The consonent count is %d\n",cc);
+	printf("Total letter count is %d\n",lc);
+}
+```

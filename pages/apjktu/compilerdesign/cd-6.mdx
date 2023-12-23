@@ -1,0 +1,66 @@
+# YACC specification to recognize valid arithematic expression
+
+## Aim
+
+Generate a YACC specification to recognize a valid arithmetic expression that uses operators +, -, *, / and paranthesis.
+
+## Program
+
+#### yacc
+
+```yacc showLineNumbers copy
+%{
+#include<stdio.h>
+#include<stdlib.h>
+int flag=0;
+%}
+
+%token NUMBER
+%token IDENTIFIER
+%token OPERATOR
+
+%left OPERATOR
+
+%%
+E:E OPERATOR E
+|'('E')'
+|NUMBER
+|IDENTIFIER
+;
+%%
+
+void main()
+{
+	printf("Enter the expression to check the validity.\n");
+	yyparse();
+	if(flag==0)
+	{
+		printf("The experssion is valid.\n");
+	}
+}
+
+void yyerror()
+{
+	flag=1;
+	printf("Error occured while parsing, Invalid identifier.\n");
+}
+```
+
+#### lex
+
+```yacc showLineNumbers copy
+%{
+#include"y.tab.h"
+%}
+
+%%
+[0-9]+ {return NUMBER;}
+[a-zA-Z_][a-zA-Z_0-9]* {return IDENTIFIER;}
+[+-/*] {return OPERATOR;}
+%%
+
+int yywrap()
+{
+	return 1;
+}
+```

@@ -1,0 +1,33 @@
+# Convert letter case using LEX Tool
+
+## Aim
+
+Write a lex program to convert the substring abc to ABC from the given input string.
+
+## Program
+
+```lex showLineNumbers copy
+%{
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+%}
+
+%%
+[0-9] ;
+[ \t\n] ;
+[abc] {printf("%c",yytext[0]-32);}
+. {printf("%c",yytext[0]);}
+%%
+
+int yywrap()
+{
+	return 1;
+}
+
+void main ()
+{
+	printf("Enter the string for analysis.\n");
+	yylex();
+}
+```
