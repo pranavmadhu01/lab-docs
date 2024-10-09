@@ -7,14 +7,6 @@ const config: DocsThemeConfig = {
       titleTemplate: '%s – Lab Docs'
     }
   },
-  banner: {
-    key: 'release',
-    text: (
-      <a href="https://github.com/pranavmadhu01/lab-docs" target="_blank">
-        🔴 Lab docs is looking for contributers from different universities. 🔴
-      </a>
-    )
-  },
   logo: (
     <>
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="code">
