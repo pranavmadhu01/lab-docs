@@ -1,0 +1,149 @@
+# Calculator using python
+
+## Aim
+
+Create a simple desktop calculator using python with only 5 basic arithmetic operations.
+
+> 5 basic arithmetic operations are:
+> 1. Addition '+'
+> 2. Subtraction '-'
+> 3. Multiplication '*'
+> 4. Division '/'
+> 5. Modulus '%'
+
+## Algorithm
+
+1. Start
+2. Take input from the user for the first number
+3. Take input from the user for the second number
+4. Take input from the user for the operation
+        * Validate the operation input
+        * If the operation is not one of the 5 basic arithmetic operations, print "Invalid operation" and continue
+        * else, go to step 5
+5. Perform the operation
+        * If the operation is '+', add the two numbers.
+        * If the operation is '-', subtract the two numbers.
+        * If the operation is '*', multiply the two numbers.
+        * If the operation is '/', divide the two numbers.
+        * If the operation is '%', find the modulus of the two numbers.
+6. Print the result
+7. End
+
+## Program
+
+```python filename="calculator.py" copy showLineNumbers
+# Function to add two numbers
+def add(x, y):
+    return x + y
+
+# Function to subtract two numbers
+def subtract(x, y):
+    return x - y
+
+# Function to multiply two numbers
+def multiply(x, y):
+    return x * y
+
+# Function to divide two numbers
+def divide(x, y):
+    return x / y
+
+# Function to find the modulus of two numbers
+def modulus(x, y):
+    return x % y
+
+# Take input from the user
+input1 = input("Enter the first number: \n")
+input2 = input("Enter the second number: \n")
+
+# Convert the input number to floating point number
+num1 = float(input1)
+num2 = float(input2)
+
+while(True):
+
+        # Take input from the user for the operation
+        operation = input("Enter the operation (+, -, *, /, %) \nor press e to exit the program: \n")
+
+        #validate the operation input
+        if operation.lower() == 'e':
+                break
+        elif operation not in ['+', '-', '*', '/', '%']:
+                print("Invalid operation")
+                continue
+        else:
+                # declare a variable to store the result and initialize it to 0 (not necessary)
+                result = 0
+
+                # Perform the operation
+                if operation == '+':
+                        result = add(num1, num2)
+                elif operation == '-':
+                        result = subtract(num1, num2)
+                elif operation == '*':
+                        result = multiply(num1, num2)
+                elif operation == '/':
+                        result = divide(num1, num2)
+                elif operation == '%':
+                        result = modulus(num1, num2)
+
+                # Print the result
+                print(f"{num1} {operation} {num2} = {result}")
+
+```
+## Sample Input/Output
+
+```plaintext
+Enter the first number:
+10
+Enter the second number:
+5
+Enter the operation (+, -, *, /, %)
+or press e to exit the program:
++
+10.0 + 5.0 = 15.0
+Enter the operation (+, -, *, /, %)
+or press e to exit the program:
+-
+10.0 - 5.0 = 5.0
+Enter the operation (+, -, *, /, %)
+or press e to exit the program:
+*
+10.0 * 5.0 = 50.0
+Enter the operation (+, -, *, /, %)
+or press e to exit the program:
+/
+10.0 / 5.0 = 2.0
+Enter the operation (+, -, *, /, %)
+or press e to exit the program:
+%
+10.0 % 5.0 = 0.0
+Enter the operation (+, -, *, /, %)
+or press e to exit the program:
+e
+```
+
+## Explanation
+
+* The program takes two numbers as input from the user.
+* It then takes the operation as input from the user.
+* If the operation is one of the 5 basic arithmetic operations, it performs the operation and prints the result.
+* If the operation is not one of the 5 basic arithmetic operations, it prints "Invalid operation" and continues.
+* The program continues to take input for the operation until the user exits the program by pressing 'e'.
+
+## Complexity Analysis
+
+The time complexity of the program is O(1) as the program performs a fixed number of operations irrespective of the input size.
+
+The space complexity of the program is also O(1) as the program uses a fixed amount of space to store variables and does not depend on the input size.
+
+## How can you improve this program?
+
+1. You can add more arithmetic operations like exponentiation, square root, etc.
+2. You can add input validation to ensure that the user enters valid numbers.
+3. You can add error handling to handle division by zero or other invalid operations.
+4. You can add a loop to allow the user to perform multiple operations without restarting the program.
+
+## Summary
+
+In this tutorial, we learned how to create a simple desktop calculator using python with 5 basic arithmetic operations. We also discussed the algorithm, program, and sample input/output for the calculator.
