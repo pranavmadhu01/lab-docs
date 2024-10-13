@@ -1,0 +1,117 @@
+# String operations using python
+
+## Aim
+
+Create, concatenate, and print a string and access a sub-string from a given string.
+
+## Algorithm
+
+1. Start
+2. Input a string from the user
+3. Take the choice input from the user
+    * Validate the choice input
+    * If the choice is 'e', exit the program
+    * If the choice is not one of the 3 choices, print "Invalid choice" and continue
+    * else, go to step 4
+4. Perform the operation
+    * If the choice is 1, concatenate the string
+    * If the choice is 2, access a substring
+    * If the choice is 3, print the string
+5. End
+
+## Program
+
+```python filename="string_operations.py" copy showLineNumbers
+# Function to concatenate two strings
+def concatenate_strings(string1, string2):
+    return string1 + string2
+
+# Function to derive a substring from a string
+def access_substring(string, start_index, end_index):
+    return string[start_index:end_index]
+
+# Input string
+string_1 = input("Enter a string: \n")
+
+while(True):
+    # Input the choice from the user
+    choice = input("Enter 1 to concatenate the string, 2 to access a substring, 3 to print the string \nor press 'e' to exit the program: \n")
+
+    # Validate the choice input
+    if choice.lower() == 'e':
+        break
+    elif choice not in ['1', '2', '3']:
+
+        print("Invalid choice")
+        continue
+    else:
+
+        # If the choice is 1, concatenate the string
+        if choice == '1':
+            string_2 = input("Enter another string: \n")
+            concatenated_string = concatenate_strings(string_1, string_2)
+            print(concatenated_string)
+
+        # If the choice is 2, access a substring
+        elif choice == '2':
+            start_index = int(input("Enter the start index: \n"))
+            end_index = int(input("Enter the end index: \n"))
+            sub_string = access_substring(string_1, start_index, end_index)
+            print(sub_string)
+
+        # If the choice is 3, print the string
+        elif choice == '3':
+            print(string_1)
+
+```
+## Sample Input/Output
+
+```plaintext
+Enter a string:
+Hello
+Enter 1 to concatenate the string, 2 to access a substring, 3 to print the string
+or press 'e' to exit the program:
+1
+Enter another string:
+World
+HelloWorld
+Enter 1 to concatenate the string, 2 to access a substring, 3 to print the string
+or press 'e' to exit the program:
+2
+Enter the start index:
+0
+Enter the end index:
+5
+Hello
+Enter 1 to concatenate the string, 2 to access a substring, 3 to print the string
+or press 'e' to exit the program:
+3
+Hello
+Enter 1 to concatenate the string, 2 to access a substring, 3 to print the string
+or press 'e' to exit the program:
+e
+```
+## Explanation
+
+* The program takes a string as input from the user.
+* The program then takes the choice input from the user.
+* If the choice is 1, the program concatenates the string.
+* If the choice is 2, the program accesses a substring.
+* If the choice is 3, the program prints the string.
+* The program continues to take the choice input until the user chooses to exit the program.
+
+## Complexity Analysis
+
+The time complexity of the program is O(1) as the program performs a fixed number of operations irrespective of the input size.
+
+The space complexity of the program is O(1) as the program uses a fixed amount of extra space irrespective of the input size.
+
+## How can you improve this program?
+
+1. You can add more string operations like finding the length of the string, converting the string to uppercase or lowercase, etc.
+2. You can add more validation checks for the input strings and indices.
+3. You can add error handling for invalid inputs.
+
+## Summary
+
+In this tutorial, we learned how to create, concatenate, and print a string in Python. We also learned how to access a substring from a given string. This program demonstrates the basic string operations that can be performed using Python.
