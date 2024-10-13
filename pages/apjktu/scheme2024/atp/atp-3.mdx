@@ -1,0 +1,99 @@
+# Date Time using python
+
+## Aim
+
+Familiarize time and date in various formats (Eg. “Thu Jul 11 10:26:23 IST 2024”).
+
+## Legal format codes
+
+| Directive | Meaning | Example |
+|-----------|---------|---------|
+|%d | Day of the month as a zero-padded decimal number | 01, 02, ..., 31 |
+|%m | Month as a zero-padded decimal number | 01, 02, ..., 12 |
+|%Y | Year with century as a decimal number | 0001, 0002, ..., 2013, 2014, ..., 9998, 9999 |
+|%A | Weekday as locale’s full name | Sunday, Monday, ..., Saturday (en_US) |
+|%a | Weekday as locale’s abbreviated name | Sun, Mon, ..., Sat (en_US) |
+|%B | Month as locale’s full name | January, February, ..., December (en_US) |
+|%b | Month as locale’s abbreviated name | Jan, Feb, ..., Dec (en_US) |
+|%H | Hour (24-hour clock) as a zero-padded decimal number | 00, 01, ..., 23 |
+|%I | Hour (12-hour clock) as a zero-padded decimal number | 01, 02, ..., 12 |
+|%M | Minute as a zero-padded decimal number | 00, 01, ..., 59 |
+|%S | Second as a zero-padded decimal number | 00, 01, ..., 59 |
+|%Z | Time zone name | UTC, EST, CST |
+
+## Algorithm
+
+1. Start
+2. Import the datetime module
+3. Get the current date and time using the now() method
+4. Print the current date and time in various formats
+5. End
+
+## Program
+
+```python filename="datetime.py" copy showLineNumbers
+# Import the datetime module
+from datetime import datetime
+
+# Get the current date and time
+now = datetime.now()
+
+# Print the current date and time in various formats
+print("Current date and time: ", now)
+print("Current date: ", now.strftime("%Y-%m-%d"))
+print("Current time: ", now.strftime("%H:%M:%S"))
+print("Current day: ", now.strftime("%A"))
+print("Current month: ", now.strftime("%B"))
+print("Current year: ", now.strftime("%Y"))
+print("Current hour: ", now.strftime("%H"))
+print("Current minute: ", now.strftime("%M"))
+print("Current second: ", now.strftime("%S"))
+print("Current timezone: ", now.strftime("%Z"))
+
+```
+
+## Sample Input/Output
+
+```plaintext
+Current date and time:  2024-07-11 10:26:23.123456
+Current date:  2024-07-11
+Current time:  10:26:23
+Current day:  Thursday
+Current month:  July
+Current year:  2024
+Current hour:  10
+Current minute:  26
+Current second:  23
+Current timezone:  IST
+```
+
+## Explanation
+
+* The program imports the datetime module.
+* The program gets the current date and time using the now() method.
+* The program prints the current date and time in various formats.
+* The program prints the current date and time in the format "YYYY-MM-DD HH:MM:SS".
+* The program prints the current date in the format "YYYY-MM-DD".
+* The program prints the current time in the format "HH:MM:SS".
+* The program prints the current day in the format "Day".
+* The program prints the current month in the format "Month".
+* The program prints the current year in the format "YYYY".
+* The program prints the current hour in the format "HH".
+* The program prints the current minute in the format "MM".
+* The program prints the current second in the format "SS".
+* The program prints the current timezone in the format "Timezone".
+
+## Complexity Analysis
+
+The time complexity of the program is O(1) as the program performs a fixed number of operations irrespective of the input size.
+
+The space complexity of the program is O(1) as the program uses a fixed amount of space irrespective of the input size.
+
+## How can you improve this program?
+
+1. You can add more date and time formats to print.
+2. You can add more functionalities like adding or subtracting days, months, years, hours, minutes, and seconds to the current date and time.
+
+## Summary
+
+In this tutorial, you learned how to work with date and time in Python using the datetime module. You learned how to get the current date and time and print them in various formats. You also learned how to extract the day, month, year, hour, minute, second, and timezone from the current date and time. You can use this knowledge to work with date and time in your Python programs.
