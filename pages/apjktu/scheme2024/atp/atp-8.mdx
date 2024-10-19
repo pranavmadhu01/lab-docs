@@ -1,0 +1,86 @@
+# Prime Numbers Less Than N
+
+## Aim
+
+Write a program to print all prime numbers less than a given number N.
+
+## Algorithm
+
+1. Start
+2. Define a function `is_prime` to check if a number is prime.
+3. Iterate through all numbers less than N.
+4. Use the `is_prime` function to check if the number is prime.
+5. Print the prime numbers.
+6. End
+
+## Program
+
+```python filename="prime_numbers.py" copy showLineNumbers
+# Function to check if a number is prime
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Function to print all prime numbers less than N
+def print_primes_less_than_n(n):
+    for num in range(2, n):
+        if is_prime(num):
+            print(num, end=' ')
+
+# Take input from the user
+n = int(input("Enter a number: "))
+print(f"Prime numbers less than {n} are:")
+print_primes_less_than_n(n)
+```
+
+## Sample Input/Output
+
+```plaintext
+Enter a number: 20
+Prime numbers less than 20 are:
+2 3 5 7 11 13 17 19
+```
+
+## Explanation
+
+* The program defines a function `is_prime` to check if a number is prime:
+  - The function takes a number `num` as input.
+  - If `num` is less than or equal to 1, it returns `False` because 0 and 1 are not prime numbers.
+  - For each number `i` from 2 to the integer part of the square root of `num`:
+    - If `num` is divisible by `i` (i.e., `num % i == 0`), it returns `False` because `num` has a divisor other than 1 and itself.
+  - If no divisors are found, it returns `True` because `num` is a prime number.
+
+* The program defines a function `print_primes_less_than_n` to print all prime numbers less than N:
+  - The function takes a number `n` as input.
+  - For each number `num` from 2 to `n-1`:
+    - It uses the `is_prime` function to check if `num` is prime.
+    - If `num` is prime, it prints `num` followed by a space.
+
+* The program takes an input number `N` from the user:
+  - It asks the user to enter a number and stores it in the variable `n`.
+
+* The program prints all prime numbers less than `N` using the `print_primes_less_than_n` function:
+  - It calls the `print_primes_less_than_n` function with `n` as the argument.
+  - The function prints all prime numbers less than `n`.
+
+* Example:
+  - If the user enters `20`, the program will print `2 3 5 7 11 13 17 19` because these are the prime numbers less than 20.
+
+## Complexity Analysis
+
+The time complexity of the `is_prime` function is O(√n) as it checks divisibility up to the square root of the number. The overall time complexity of the program is O(n√n) as it checks all numbers less than N.
+
+The space complexity of the program is O(1) as it uses a fixed amount of space irrespective of the input size.
+
+## How can you improve this program?
+
+1. You can optimize the `is_prime` function by skipping even numbers after checking for 2.
+2. You can use the Sieve of Eratosthenes algorithm to find all prime numbers less than N more efficiently.
+
+## Summary
+
+In this tutorial, you learned how to write a Python program to print all prime numbers less than a given number N. You learned how to define a function to check if a number is prime and how to use this function to print prime numbers.
