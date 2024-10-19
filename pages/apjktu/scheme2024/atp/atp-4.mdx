@@ -1,0 +1,68 @@
+# Array Operations in Numpy-Python
+
+## Aim
+
+Write a program to create, append, and remove lists in Python using NumPy.
+
+> * An array is a data structure that stores a collection of elements, each identified by at least one array index or key. An array is stored such that the position of each element can be computed by its index or key.
+> * NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
+
+
+## Algorithm
+
+1. Start
+2. Import the NumPy library
+3. Create an array
+4. Append an element to the array
+5. Remove an element from the array
+6. End
+
+## Program
+
+```python filename="array_operations.py" copy showLineNumbers
+# Import the NumPy library
+import numpy as np
+
+# Create an array
+array = np.array([1, 2, 3, 4, 5])
+print("Original Array:", array)
+
+# Append an element to the array
+array = np.append(array, 6)
+print("Array after appending 6:", array)
+
+# Remove an element from the array
+array = np.delete(array, 2)
+print("Array after removing element at index 2:", array)
+```
+
+## Sample Input/Output
+
+```plaintext
+Original Array: [1 2 3 4 5]
+Array after appending 6: [1 2 3 4 5 6]
+Array after removing element at index 2: [1 2 4 5 6]
+```
+
+## Explanation
+
+* We import the NumPy library using the statement `import numpy as np`.
+* We create an array `array` using the statement `array = np.array([1, 2, 3, 4, 5])`.
+* We append an element `6` to the array using the statement `array = np.append(array, 6)`.
+* We remove the element at index `2` from the array using the statement `array = np.delete(array, 2)`.
+* The final array after appending and removing elements is `[1 2 4 5 6]`.
+
+## Complexity Analysis
+
+* The time complexity for appending an element to an array using NumPy is `O(n)`, where `n` is the number of elements in the array.
+* The time complexity for removing an element from an array using NumPy is `O(n)`, where `n` is the number of elements in the array.
+
+## How can you improve this program?
+
+* You can explore other NumPy functions for array manipulation.
+* You can create multi-dimensional arrays and perform operations on them.
+* You can experiment with different data types and sizes of arrays.
+
+## Summary
+
+In this tutorial, we learned how to create, append, and remove elements from arrays using NumPy in Python. We also discussed the algorithm, program, and sample input/output for array operations.
