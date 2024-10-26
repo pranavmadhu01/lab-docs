@@ -1,0 +1,97 @@
+# Factorial of a Number Using Recursion
+
+## Aim
+
+Write a program to find the factorial of a number using recursion in Python.
+
+> * A factorial of a non-negative integer `n` is the product of all positive integers less than or equal to `n`. It is denoted by `n!`.
+> * Recursion is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.
+
+## Algorithm
+
+1. **Start**
+2. **Define a recursive function `factorial` to calculate the factorial of a number:**
+   - If the number is 0 or 1, return 1 (base case).
+   - Otherwise, return the number multiplied by the factorial of the number minus 1 (recursive case).
+3. **Take input from the user:**
+   - Ask the user to enter a non-negative integer `n`.
+4. **Calculate the factorial of the number:**
+   - Call the `factorial` function with `n` as the argument and store the result.
+5. **Print the result:**
+   - Display the factorial of the number.
+6. **End**
+
+## Program
+
+```python filename="factorial_recursion.py" copy showLineNumbers
+# Define a recursive function to calculate the factorial of a number
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Take input from the user
+n = int(input("Enter a non-negative integer: "))
+
+# Calculate the factorial of the number
+result = factorial(n)
+
+# Print the result
+print(f"The factorial of {n} is {result}")
+```
+
+## Sample Input/Output
+
+```plaintext
+Enter a non-negative integer: 5
+The factorial of 5 is 120
+```
+
+## Explanation
+
+* We define a recursive function `factorial` to calculate the factorial of a number:
+  - If the number `n` is 0 or 1, the function returns 1 because the factorial of 0 and 1 is 1.
+  - Otherwise, the function returns `n` multiplied by the factorial of `n-1`, which is the recursive call.
+
+* Let's break down the execution of the recursive function with an example:
+  - Suppose the user enters `5`.
+  - The function call `factorial(5)` will execute as follows:
+    1. `factorial(5)`:
+       - Since `5` is not 0 or 1, it returns `5 * factorial(4)`.
+    2. `factorial(4)`:
+       - Since `4` is not 0 or 1, it returns `4 * factorial(3)`.
+    3. `factorial(3)`:
+       - Since `3` is not 0 or 1, it returns `3 * factorial(2)`.
+    4. `factorial(2)`:
+       - Since `2` is not 0 or 1, it returns `2 * factorial(1)`.
+    5. `factorial(1)`:
+       - Since `1` is 1, it returns `1`.
+
+* Now, let's substitute back the values:
+  - `factorial(1)` returns `1`.
+  - `factorial(2)` returns `2 * 1 = 2`.
+  - `factorial(3)` returns `3 * 2 = 6`.
+  - `factorial(4)` returns `4 * 6 = 24`.
+  - `factorial(5)` returns `5 * 24 = 120`.
+
+* Therefore, the factorial of `5` is `120`.
+
+* We take an input number `n` from the user and store it in the variable `n`.
+* We calculate the factorial of `n` by calling the `factorial` function with `n` as the argument and store the result in the variable `result`.
+* We print the result using the statement `print(f"The factorial of {n} is {result}")`.
+
+## Complexity Analysis
+
+* The time complexity of the recursive factorial function is `O(n)` because it makes `n` recursive calls.
+* The space complexity of the recursive factorial function is `O(n)` because it uses the call stack to store `n` recursive calls.
+
+## How can you improve this program?
+
+* You can add error handling to ensure the user enters a non-negative integer.
+* You can implement an iterative version of the factorial function to avoid the overhead of recursive calls.
+* You can use memoization to optimize the recursive function by storing previously calculated results.
+
+## Summary
+
+In this tutorial, we learned how to find the factorial of a number using recursion in Python. We discussed the algorithm, program, and sample input/output for calculating the factorial. We also analyzed the complexity of the recursive factorial function and suggested possible improvements.
