@@ -1,0 +1,93 @@
+# Temperature converter using python
+
+## Aim
+
+Convert temperature values back and forth between `Celsius (c)`, and `Fahrenheit (f)`. `[Formula: c/5 = f-32/9]`
+
+## Algorithm
+
+1. Start
+2. Take input from the user for the temperature value
+3. Take input from the user for the temperature unit
+4. Convert the temperature value to floating point number
+5. If the temperature unit is `c`, convert the temperature value to Fahrenheit
+6. If the temperature unit is `f`, convert the temperature value to Celsius
+7. Print the result
+8. End
+
+## Program
+
+```python filename="temperature_converter.py" copy showLineNumbers
+# Function to convert temperature from Celsius to Fahrenheit
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+# Function to convert temperature from Fahrenheit to Celsius
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+# Take input from the user
+temperature = float(input("Enter the temperature value: \n"))
+unit = input("Enter the temperature unit (c/f): \n")
+
+# Convert the temperature value
+if unit == 'c':
+    result = celsius_to_fahrenheit(temperature)
+    print(f"{temperature}°C is equal to {result}°F")
+elif unit == 'f':
+    result = fahrenheit_to_celsius(temperature)
+    print(f"{temperature}°F is equal to {result}°C")
+else:
+    print("Invalid temperature unit")
+
+```
+
+## Sample Input/Output
+
+```plaintext
+Enter the temperature value:
+0
+Enter the temperature unit (c/f):
+c
+0.0°C is equal to 32.0°F
+```
+
+```plaintext
+Enter the temperature value:
+32
+Enter the temperature unit (c/f):
+f
+32.0°F is equal to 0.0°C
+```
+
+```plaintext
+Enter the temperature value:
+100
+Enter the temperature unit (c/f):
+k
+Invalid temperature unit
+```
+
+## Explanation
+
+* The program takes the temperature value and the temperature unit as input from the user.
+* The temperature value is converted to a floating-point number.
+* If the temperature unit is `c`, the program converts the temperature value to Fahrenheit using the formula `(celsius * 9/5) + 32`.
+* If the temperature unit is `f`, the program converts the temperature value to Celsius using the formula `(fahrenheit - 32) * 5/9`.
+* The program then prints the converted temperature value.
+
+## Complexity Analysis
+
+The time complexity of this program is O(1) as it performs a fixed number of operations regardless of the input size.
+
+The space complexity of this program is also O(1) as it uses a fixed amount of space to store the input values and the result.
+
+## How can you improve this program?
+
+1. You can add support for more temperature units like Kelvin.
+2. You can add more conversion functions for other temperature units.
+3. You can add error handling for invalid input values.
+
+## Summary
+
+In this tutorial, we learned how to create a simple temperature converter program in Python that converts temperature values between Celsius and Fahrenheit. We discussed the algorithm, implemented the program, and provided sample input/output along with an explanation. We also analyzed the complexity of the program and discussed ways to improve it.
