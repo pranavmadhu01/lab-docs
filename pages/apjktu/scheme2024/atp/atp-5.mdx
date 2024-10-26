@@ -1,0 +1,85 @@
+# Largest of three numbers
+
+## Aim
+
+Write a python program to find the largest of three numbers.
+
+## Algorithm
+
+1. Start
+2. Take input from the user for the first number
+3. Take input from the user for the second number
+4. Take input from the user for the third number
+5. Compare the first number with the second number
+        * If the first number is greater than the second number, go to step 6
+        * else, go to step 7
+6. Compare the first number with the third number
+        * If the first number is greater than the third number, print the first number as the largest number
+        * else, print the third number as the largest number
+7. Compare the second number with the third number
+        * If the second number is greater than the third number, print the second number as the largest number
+        * else, print the third number as the largest number
+8. End
+
+## Program
+
+```python filename="largest_of_three_numbers.py" copy showLineNumbers
+# Take input from the user
+num1 = float(input("Enter the first number: \n"))
+num2 = float(input("Enter the second number: \n"))
+num3 = float(input("Enter the third number: \n"))
+
+# Compare the first number with the second number
+if num1 > num2:
+    # Compare the first number with the third number
+    if num1 > num3:
+        print(f"{num1} is the largest number")
+    else:
+        print(f"{num3} is the largest number")
+else:
+    # Compare the second number with the third number
+    if num2 > num3:
+        print(f"{num2} is the largest number")
+    else:
+        print(f"{num3} is the largest number")
+
+```
+
+# Sample Input/Output
+
+```plaintext
+Enter the first number:
+10
+Enter the second number:
+20
+Enter the third number:
+30
+30 is the largest number
+```
+
+## Explanation
+
+* The user is prompted to enter three numbers.
+* The program compares the first number with the second number.
+* If the first number is greater than the second number, the program compares the first number with the third number.
+* If the first number is greater than the third number, the program prints the first number as the largest number.
+* If the first number is not greater than the third number, the program prints the third number as the largest number.
+* If the first number is not greater than the second number, the program compares the second number with the third number.
+* If the second number is greater than the third number, the program prints the second number as the largest number.
+* If the second number is not greater than the third number, the program prints the third number as the largest number.
+
+## Complexity Analysis
+
+The time complexity for this program is O(1) as the program takes a constant amount of time to execute, irrespective of the input.
+
+The space complexity for this program is also O(1) as the program uses a constant amount of space to store the input values and the variables.
+
+## How can you improve this program?
+
+1. You can modify the program to take any number of inputs from the user and find the largest number among them.
+2. You can modify the program to find the smallest number among the given numbers.
+3. You can modify the program to find the second largest number among the given numbers.
+
+# Conclusion
+
+In this tutorial, you learned how to write a Python program to find the largest of three numbers. You also learned about the algorithm, program, sample input/output, explanation, complexity analysis, and ways to improve the program. You can now practice writing similar programs to enhance your Python programming skills.
