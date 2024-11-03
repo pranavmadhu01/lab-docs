@@ -1,0 +1,63 @@
+# Pattern printing using for loop
+
+## Aim
+
+Program to construct patterns of stars (*), using a nested for loop.
+
+## Algorithm
+
+1. Start
+2. Take input from the user for the number of rows
+3. Iterate through the range of rows
+    * For each row, iterate through the range of columns
+        * Print a star ('*') for each column
+    * Print a newline character to move to the next row
+4. End
+
+## Program
+
+```python filename="pattern.py" copy showLineNumbers
+# Take input from the user
+rows = int(input("Enter the number of rows: \n"))
+
+# Iterate through the range of rows
+for i in range(rows):
+    # Iterate through the range of columns
+    for j in range(i+1):
+        # Print a star for each column
+        print("*", end="")
+    # Move to the next row
+    print()
+```
+
+## Sample Input/Output
+```plaintext
+Enter the number of rows:
+5
+*
+**
+***
+****
+*****
+```
+
+## Explanation
+
+* The program takes the number of rows as input from the user.
+* It then uses a nested for loop to iterate through the rows and columns to print the pattern of stars.
+* In each row, the number of stars printed increases by 1, creating a triangular pattern.
+
+## Complexity Analysis
+
+The time complexity of this program is `O(n^2)`, where n is the number of rows. This is because the program uses a nested loop to print the pattern, resulting in `n^2` iterations.
+
+The space complexity of the program is `O(1)` as the program uses a fixed amount of space to store variables and does not depend on the input size.
+
+## How can you improve this program?
+
+1. You can modify the program to print different patterns of stars by changing the logic inside the nested loop.
+2. You can add more user-friendly features, such as allowing the user to choose the character to print instead of just a star.
+
+## Summary
+
+This program demonstrates how to construct patterns of stars using a nested for loop in Python. It is a simple example of using loops to create visual patterns.

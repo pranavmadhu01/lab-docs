@@ -1,12 +1,13 @@
 {
-    "atp-1":"Calculator",
-    "atp-2":"String Operations",
-    "atp-3":"Time and Date",
-    "atp-4":"Numpy Array Operations",
-    "atp-5":"Largest Number",
-    "atp-6":"Temperature Conversion",
-    "atp-8":"Prime Numbers",
-    "atp-9":"Factorial",
-    "atp-10":"Add Two Numbers",
-    "atp-11":"Multiply Two Numbers"
+  "atp-1": "Calculator",
+  "atp-2": "String Operations",
+  "atp-3": "Time and Date",
+  "atp-4": "Numpy Array Operations",
+  "atp-5": "Largest Number",
+  "atp-6": "Temperature Conversion",
+  "atp-7": "Pattern Printing",
+  "atp-8": "Prime Numbers",
+  "atp-9": "Factorial",
+  "atp-10": "Add Two Numbers",
+  "atp-11": "Multiply Two Numbers"
 }
