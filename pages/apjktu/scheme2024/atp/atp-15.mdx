@@ -1,0 +1,76 @@
+# Check Whether Mobile Number is Valid Using Functions
+
+## Aim
+
+Write a program to check whether the given number is a valid mobile number or not using functions in Python.
+
+> * A valid mobile number should contain exactly 10 digits.
+> * The first digit should be 7, 8, or 9.
+
+## Algorithm
+
+1. **Start**
+2. **Define a function `is_valid_mobile_number` to check the validity of the mobile number:**
+   - Check if the length of the number is 10.
+   - Check if the first digit is 7, 8, or 9.
+   - Return `True` if both conditions are met, otherwise return `False`.
+3. **Take input from the user:**
+   - Ask the user to enter a mobile number.
+4. **Check the validity of the mobile number:**
+   - Call the `is_valid_mobile_number` function with the input number as an argument and store the result.
+5. **Print the result:**
+   - Display whether the mobile number is valid or not.
+6. **End**
+
+## Program
+
+```python filename="validate_mobile_number.py" copy showLineNumbers
+# Define a function to check the validity of the mobile number
+def is_valid_mobile_number(number):
+    if len(number) == 10 and number[0] in '789':
+        return True
+    return False
+
+# Take input from the user
+mobile_number = input("Enter the mobile number: ")
+
+# Check the validity of the mobile number
+if is_valid_mobile_number(mobile_number):
+    print(f"{mobile_number} is a valid mobile number.")
+else:
+    print(f"{mobile_number} is not a valid mobile number.")
+```
+
+## Sample Input/Output
+
+```plaintext
+Enter the mobile number: 9876543210
+9876543210 is a valid mobile number.
+
+Enter the mobile number: 1234567890
+1234567890 is not a valid mobile number.
+```
+
+## Explanation
+
+* We define a function `is_valid_mobile_number` to check the validity of the mobile number:
+  - The function checks if the length of the number is 10 and if the first digit is 7, 8, or 9.
+  - If both conditions are met, the function returns `True`, otherwise it returns `False`.
+
+* We take the mobile number as input from the user and store it in the variable `mobile_number`.
+* We check the validity of the mobile number by calling the `is_valid_mobile_number` function with `mobile_number` as an argument and store the result.
+* We print the result using the statement `print(f"{mobile_number} is a valid mobile number.")` or `print(f"{mobile_number} is not a valid mobile number.")` based on the validity check.
+
+## Complexity Analysis
+
+* The time complexity of the `is_valid_mobile_number` function is `O(1)` because it performs a constant number of operations.
+* The space complexity of the `is_valid_mobile_number` function is `O(1)` because it uses a constant amount of space.
+
+## How can you improve this program?
+
+* You can add error handling to ensure the user enters a valid number format.
+* You can implement additional checks to ensure the input contains only digits.
+
+## Summary
+
+In this tutorial, we learned how to check whether a given number is a valid mobile number or not using functions in Python. We discussed the algorithm, program, and sample input/output for validating a mobile number. We also analyzed the complexity of the validation function and suggested possible improvements.
